@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
+w = {};
 
-export default function Checkout() {
+export default function ShopCart() {
   const cartShop = useSelector((state) => state.products.all);
 
   const { data, isLoading, error } = useHttp(
@@ -15,5 +16,6 @@ export default function Checkout() {
   if (error) {
     return <Error title="Failed to fetch data" message={error} />;
   }
-  return <></>;
+  return <>
+  </>;
 }
