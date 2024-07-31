@@ -45,7 +45,7 @@ export default function ProductList() {
         <li className="my-5 items-center pb-9" key={album.id}>
           <article>
             <button
-              className="px-7 mx-4 rounded-md hover:bg-slate-400"
+              className="px-7 mx-4 rounded-md hover:bg-slate-200 bg-slate-400 h-7"
               onClick={() => handleShowBody(album.id)}
             >
               More Details

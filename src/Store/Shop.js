@@ -1,21 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = null;
+const initialState = {x:'hide'};
 
 const Shop = createSlice({
   name: "shop",
   initialState: initialState,
   reducers: {
     showCart(state){
-        state='showCart'
+        
+        state.x='showCart'
     },
     hideCart(state){
-        state='hideCart'
+        state.x='hideCart'
     },
     showCheckout(state){
-        state='showCheckout'
+        state.x='showCheckout'
     },
     hideCheckout(state){
-        state='hideCheckout'
+        state.x='hideCheckout'
     }
   },
 });

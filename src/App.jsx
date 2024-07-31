@@ -2,6 +2,7 @@ import { createBrowserRouter,RouterProvider } from "react-router-dom";
 import Root from "./Components/Root";
 import Welcome from "./Components/Welcom";
 import ProductList from "./Components/ProductList";
+import ShopCart from './Components/ShopCart';
 
 const router=createBrowserRouter([{
   path: "/",
@@ -17,7 +18,10 @@ const router=createBrowserRouter([{
 function App() {
   
     return<>
-    <RouterProvider router={router}/></> 
+    <RouterProvider router={router}/>
+    <ShopCart/>
+    </> 
+
   
  
 }
