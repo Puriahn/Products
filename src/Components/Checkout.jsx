@@ -1,5 +1,4 @@
 import { useDispatch, useSelector } from "react-redux";
-import useHttp from "../Hooks/useHttp";
 import Modal from "../Common/Modal";
 import { shopActions } from "../Store/Shop";
 import Button from "../Common/Button";
@@ -10,21 +9,10 @@ export default function Checkout() {
   const cartShow = useSelector((state) => state.shop.x);
   const dispatch = useDispatch();
 
-  const { data, isLoading, error } = useHttp(
-    "https://jsonplaceholder.typicode.com/posts",
-    w,
-    []
-  );
-  if (isLoading) {
-    return <p className="center">Fetching Meals...</p>;
-  }
-  if (error) {
-    return <Error title="Failed to fetch data" message={error} />;
-  }
-
   function handleHide() {
     dispatch(shopActions.hideCart());
   }
+
   return (
     <>
       <Modal open={cartShow === "showCheckout"} onClose={handleHide}>
@@ -38,13 +26,15 @@ export default function Checkout() {
             <Input label="Postal Code" type="text" id="postal-code" />
             <Input label="Street" type="text" id="street" />
           </div>
-          
         </form>
         <div>
-            <Button onClick={handleHide} cssC="p-5 justify-end mt-24 hover:bg-stone-400 rounded-md float-end">
-              Submit
-            </Button>
-          </div>
+          <Button
+            onClick={handleHide}
+            cssC="p-5 justify-end mt-24 hover:bg-stone-400 rounded-md float-end"
+          >
+            Submit
+          </Button>
+        </div>
       </Modal>
     </>
   );

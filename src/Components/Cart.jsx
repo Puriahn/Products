@@ -2,13 +2,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { shopActions } from "../Store/Shop";
 export default function Cart() {
   const cartShop = useSelector((state) => state.products.all);
-  const cartShow = useSelector((state) => state.shop.x);
-
-  
   const dispatch = useDispatch();
+  
   function handleShowCart() {
     dispatch(shopActions.showCart());
   }
+    console.log(cartShop)
   return (
     <button
       onClick={handleShowCart}

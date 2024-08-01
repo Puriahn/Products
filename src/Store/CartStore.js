@@ -6,10 +6,15 @@ const Cart = createSlice({
   initialState: initialState,
   reducers: {
     add(state, action) {
-      state.all = [
-        ...state.all,
-        { id: action.payload.id, title: action.payload.title },
-      ];
+      const a = state.all.findIndex((item) => item.id === action.payload.id);
+      if (a > -1) {
+        state.all[action.payload.id - 1].quantity++;
+      } else {
+        state.all = [
+          ...state.all,
+          { id: action.payload.id, title: action.payload.title, quantity: 1 },
+        ];
+      }
     },
   },
 });
