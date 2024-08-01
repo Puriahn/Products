@@ -29,7 +29,8 @@ export default function ShopCart() {
         {cartShop.map((item) => (
           <li className="text-white my-3" key={item.id}>
             <span className="font-bold text-green-950">title: </span>
-            {item.title} &ensp;*&ensp;{item.quantity > 1 && <span>{item.quantity}</span>}
+            {item.title} &ensp;*&ensp;
+            {item.quantity > 1 && <span>{item.quantity}</span>}
           </li>
         ))}
       </ul>

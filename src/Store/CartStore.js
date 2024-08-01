@@ -8,7 +8,7 @@ const Cart = createSlice({
     add(state, action) {
       const a = state.all.findIndex((item) => item.id === action.payload.id);
       if (a > -1) {
-        state.all[action.payload.id - 1].quantity++;
+        state.all[a].quantity++;
       } else {
         state.all = [
           ...state.all,
