@@ -12,13 +12,13 @@ export default function ProductList() {
   const [show, setShow] = useState({ ok: false, id: null });
 
   const { data, isLoading, error } = useHttp(
-    "https://jsonplaceholder.typicode.com/posts",
+    "https://jsonplaceholder.typicode.com/postsss",
     w,
     []
   );
 
   if (isLoading) {
-    return <p className="center">Fetching Meals...</p>;
+    return <p className="text-center">Fetching Meals...</p>;
   }
   if (error) {
     return <Error title="Failed to fetch data" message={error} />;
