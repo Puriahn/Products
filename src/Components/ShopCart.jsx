@@ -10,29 +10,32 @@ export default function ShopCart() {
   const cartShop = useSelector((state) => state.products.all);
   const cartShow = useSelector((state) => state.shop.x);
   const dispatch = useDispatch();
-  console.log(cartShop);
+  
   const { data, isLoading, error } = useHttp(
     "https://jsonplaceholder.typicode.com/posts",
     w,
     []
   );
-
   if (isLoading) {
     return <p className="center">Fetching Meals...</p>;
   }
   if (error) {
     return <Error title="Failed to fetch data" message={error} />;
   }
+
   function handleHide() {
-    dispatch(shopActions.hideCart());
+    dispatch(shopActions.hideCart())
+    console.log('shopcart handlehide')
   }
 
   function handleGoToCheckout() {
     dispatch(shopActions.showCheckout());
+    console.log('shopcart gotocheckout')
+
   }
 
   return (
-    <Modal open={cartShow === "showCart"} onClose={handleHide}>
+    <Modal open={cartShow === "showCart"}  onClose={cartShow==='showCheckout'?null:handleHide}>
       <h2 className="font bold">Your Cart</h2>
       <ul>
         {cartShop.map((item) => (
