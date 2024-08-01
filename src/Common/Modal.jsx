@@ -11,7 +11,7 @@ export default function Modal({ children, open,onClose}) {
     return () => modal.close();
   }, [open]);
   return (
-    <dialog ref={dialog} onClose={onClose} className="w-fit h-fit shadow-2xl rounded-lg bg-slate-500 p-5">
+    <dialog ref={dialog} onClose={onClose} className="w-fit h-fit min-w-64 min-h-64 shadow-2xl rounded-lg bg-slate-500 p-5">
       {children}
     </dialog>
   )

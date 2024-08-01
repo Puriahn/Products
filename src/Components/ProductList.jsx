@@ -40,9 +40,9 @@ export default function ProductList() {
     }
   }
   return (
-    <ul className="bg-slate-500 mx-24 rounded-lg flex-row text-center my-4">
+    <ul className="bg-slate-500 mx-24 rounded-lg flex-row text-center mt-2">
       {data.map((album) => (
-        <li className="my-5 items-center pb-9" key={album.id}>
+        <li className=" items-center pb-9" key={album.id}>
           <article>
             <button
               className="px-7 mx-4 rounded-md hover:bg-slate-200 bg-slate-400 h-7"

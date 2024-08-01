@@ -24,7 +24,6 @@ export default function Checkout() {
 
   function handleHide() {
     dispatch(shopActions.hideCart());
-    console.log("chekout hidehandle");
   }
   return (
     <>

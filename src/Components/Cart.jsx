@@ -8,7 +8,6 @@ export default function Cart() {
   const dispatch = useDispatch();
   function handleShowCart() {
     dispatch(shopActions.showCart());
-    console.log(cartShow)
   }
   return (
     <button

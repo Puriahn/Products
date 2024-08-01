@@ -25,12 +25,10 @@ export default function ShopCart() {
 
   function handleHide() {
     dispatch(shopActions.hideCart())
-    console.log('shopcart handlehide')
   }
 
   function handleGoToCheckout() {
     dispatch(shopActions.showCheckout());
-    console.log('shopcart gotocheckout')
 
   }
 
