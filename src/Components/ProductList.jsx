@@ -8,7 +8,6 @@ import { useState } from "react";
 const w = {};
 
 export default function ProductList() {
-  const cartShop = useSelector((state) => state.products.all);
   const dispatch = useDispatch();
   const [show, setShow] = useState({ ok: false, id: null });
 
@@ -31,7 +30,6 @@ export default function ProductList() {
   }
 
   function handleShowBody(idd) {
-    console.log(idd)
     if (idd === show.id) {
       setShow({ ok: !show.ok, id: idd });
     }
